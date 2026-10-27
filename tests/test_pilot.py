@@ -5,6 +5,8 @@ import unittest
 from collections import Counter
 from pathlib import Path
 
+TEST_KEY = Path(__file__).resolve().parent / "fixtures/public_test_identity.json"
+
 from topodelta_qa.dataset import generate, input_exports, read_jsonl, split_schedule
 from topodelta_qa.evaluate import edge_scores, evaluate_records, load_predictions, parse_delta
 from topodelta_qa.render import RenderError, positions, scene, unchanged_geometry, validate_scene
@@ -127,7 +129,7 @@ class DatasetAndMetricTests(unittest.TestCase):
         cls.root = Path(cls.tmp.name)
         cls.config = Config(groups=6, max_attempts=600, train_fraction=0.5, validation_fraction=0.2, bootstrap_replicates=50)
         cls.first = cls.root / "first"
-        generate(cls.config, cls.first)
+        generate(cls.config, cls.first, id_key_file=TEST_KEY)
         cls.groups = read_jsonl(cls.first / "gold/groups.jsonl")
         from topodelta_qa.identity import read_key
         cls.single, cls.paired, cls.sg, cls.pg = input_exports(cls.groups, read_key(cls.first / "gold/id_key.json"))
@@ -156,11 +158,11 @@ class DatasetAndMetricTests(unittest.TestCase):
         for row in self.single + self.paired:
             self.assertFalse(set(row) & {"answers", "graph", "certificates", "relevance", "role", "edit", "delta", "mask"})
         with self.assertRaises(ValueError):
-            generate(self.config, self.first)
+            generate(self.config, self.first, id_key_file=TEST_KEY)
 
     def test_repeat_generation_byte_reproducibility(self):
         second = self.root / "second"
-        generate(self.config, second)
+        generate(self.config, second, id_key_file=TEST_KEY)
         first_files = {p.relative_to(self.first): p.read_bytes() for p in self.first.rglob("*") if p.is_file()}
         second_files = {p.relative_to(second): p.read_bytes() for p in second.rglob("*") if p.is_file()}
         self.assertEqual(first_files, second_files)
@@ -245,7 +247,7 @@ class DatasetAndMetricTests(unittest.TestCase):
         root = self.root / "failed"
         with patch("topodelta_qa.dataset.propose", side_effect=RenderError("forced_failure")):
             with self.assertRaises(RuntimeError):
-                generate(Config(groups=1, max_attempts=2), root)
+                generate(Config(groups=1, max_attempts=2), root, id_key_file=TEST_KEY)
         summary = json.loads((root / "reports/generation.json").read_text())
         self.assertEqual((summary["attempted"], summary["rejected"], summary["accepted"]), (2, 2, 0))
         self.assertEqual(summary["status"], "failed")

@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "source_manifest_sha256": "10fcb8dd41f48542301f22dd09f4bbb553095333335a3db7427a098bced09e0a",
+  "full_release_counts": {
+    "diagram_renderings": 80000,
+    "groups": 20000,
+    "original_variant_question_comparisons": 120000,
+    "png_files": 80000,
+    "single_qa_instances": 160000,
+    "svg_files": 80000
+  },
+  "comparison_cases": {
+    "redraw": 40000,
+    "irrelevant_edit": 58914,
+    "relevant_edit": 21086
+  },
+  "agent_audit": {
+    "stratified_groups": 200,
+    "additional_high_risk_groups": 16,
+    "distinct_groups": 216,
+    "images": 864,
+    "human_reviews": 0
+  },
+  "cli_checks": {
+    "topodelta_qa": {
+      "exit_code": 0,
+      "help_displayed": true
+    },
+    "topodelta_qa.release.build": {
+      "exit_code": 0,
+      "help_displayed": true
+    },
+    "topodelta_qa.release.verify": {
+      "exit_code": 0,
+      "help_displayed": true
+    }
+  },
+  "original_readme_preserved_in_initial_commit_and_historical_section": true,
+  "original_readme_sha256": "b28ab74e32e9e466df590c5126a879fa340d38f5c6c80acc82c6263f69d38910",
+  "full_regeneration_during_repository_preparation": false,
+  "model_benchmarking": false,
+  "human_validation": false,
+  "browser_inspection": "pending: tools unavailable; static links and saved PNGs checked",
+  "full_dataset_availability": "Local only; not included in Git and no public download link provided.",
+  "inference_harness_tests": "Not run: cancelled Phase 2A/2B live harness outside dataset-only scope.",
+  "legacy_source_inventory": {
+    "files": 47,
+    "unchanged_in_worktree": 45,
+    "explicit_current_changes": [
+      "README.md",
+      "tests/test_dataset_extension.py"
+    ],
+    "originals_preserved": "Initial Git commit and existing local frozen source snapshots; immutable manifests not rewritten."
+  },
+  "dataset_tests": {
+    "successful": true,
+    "tests_run": 41,
+    "runs": [
+      {
+        "pattern": "test_release*.py",
+        "tests_run": 14,
+        "exit_code": 0
+      },
+      {
+        "pattern": "test_pilot.py",
+        "tests_run": 17,
+        "exit_code": 0
+      },
+      {
+        "pattern": "test_phase1b.py",
+        "tests_run": 4,
+        "exit_code": 0
+      },
+      {
+        "pattern": "test_dataset_extension.py",
+        "tests_run": 3,
+        "exit_code": 0
+      },
+      {
+        "pattern": "test_instructor_demo.py",
+        "tests_run": 3,
+        "exit_code": 0
+      }
+    ]
+  },
+  "clean_export_verification": {
+    "status": "passed",
+    "files_exported": 210,
+    "private_identity_key_present": false,
+    "full_outputs_present": false,
+    "public_dummy_test_fixture_present": true,
+    "manifest_check": "Unavailable in clone; explicitly reported false",
+    "source_copy_hashes_verified": 101,
+    "tests_run": 41,
+    "runs": [
+      {
+        "pattern": "test_release*.py",
+        "tests_run": 14,
+        "exit_code": 0
+      },
+      {
+        "pattern": "test_pilot.py",
+        "tests_run": 17,
+        "exit_code": 0
+      },
+      {
+        "pattern": "test_phase1b.py",
+        "tests_run": 4,
+        "exit_code": 0
+      },
+      {
+        "pattern": "test_dataset_extension.py",
+        "tests_run": 3,
+        "exit_code": 0
+      },
+      {
+        "pattern": "test_instructor_demo.py",
+        "tests_run": 3,
+        "exit_code": 0
+      }
+    ],
+    "no_inference_or_network_requests": true
+  },
+  "git_exclusion_cases_checked": 25,
+  "test_portability_fix": "Private key/history dependencies replaced only in tests with explicit public/disposable fixtures. Frozen dataset and generator/verifier unchanged.",
+  "staged_secret_and_large_file_inspection": {
+    "status": "passed",
+    "tracked_files_inspected": 210,
+    "secret_matches": 0,
+    "private_release_key_in_history_or_index": false,
+    "files_over_5_mib": 0,
+    "curated_pngs": 64,
+    "source_copy_hashes_match_staged_blobs": 101,
+    "largest_file": {
+      "path": "instructor_demo/reports/answer_transitions.csv",
+      "bytes": 204858
+    },
+    "git_diff_cached_check": "passed",
+    "private_key_scan": "Compared actual local evaluator key without displaying it; public dummy fixture is different.",
+    "limits": "Signature scans do not prove the absence of all possible secret patterns."
+  }
+}

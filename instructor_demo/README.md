@@ -121,23 +121,26 @@ invariance separately from edited-case sensitivity. Low marginal shortcut
 associations do not prove absence of leakage. The legacy evaluator supports the
 older 6–12-node format; it is not a release-candidate baseline evaluator.
 
-The completed agent audit covers **216 groups / 864 images**, including
-**16 additional high-risk groups**. Deterministic graph/image checks
+This synthetic dataset has a **200-group agent visual audit** plus
+**16 additional high-risk groups** (216 distinct groups /
+864 images in total). Deterministic graph/image checks
 establish defined software properties; agent judgments concern apparent visual
 readability at inspected scales. **No human validation or model benchmarking
 occurred.** Human validation is outside scope. Existing review materials remain
 local and unchanged; no additional review materials were created for this demo.
 
-The workspace had **no Git repository or tracking index** before ignore changes.
+At the original demo handover the workspace had **no Git repository or tracking
+index** before ignore changes; that inspection is preserved in `reports/git_preparation.json`.
 The root `.gitignore` now excludes `outputs/`, credentials/identity keys, virtual
 environments and caches. Source (`topodelta_qa/`, `scripts/`, `tests/`), configs
 without keys, docs and this bounded demo are eligible for ordinary tracking.
 Only **16 saved groups / 64 PNGs** are included here, all from train, selected for
-teaching coverage rather than performance. The historical root README stays
-unchanged because its hash is preserved in earlier build evidence; use this
-README for the current demo. Full collections and temporary outputs stay local.
-The workspace was not initialized as a repository; nothing was published or
-pushed. License adoption and font
+teaching coverage rather than performance. The original root README is preserved
+in the initial Git commit and the root README's historical section; the frozen
+legacy source inventory refers to those original bytes. Full collections and
+temporary outputs stay local.
+Current repository delivery is documented in [the root README](../README.md).
+License adoption and font
 redistribution provenance need author review before any external publication;
 this demo grants no license. No novelty, superiority or publication readiness
 is claimed.

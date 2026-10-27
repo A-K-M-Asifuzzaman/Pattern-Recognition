@@ -2,12 +2,13 @@ import copy
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from collections import Counter
 from pathlib import Path
 
 from PIL import Image
 
-from topodelta_qa.release.build import IsoIndex, build, records, sha
+from topodelta_qa.release.build import IsoIndex, build, initialize, records, sha
 from topodelta_qa.release.drawing import validate_scene, template
 from topodelta_qa.release.independent import distances, evidence, verify_group
 from topodelta_qa.release.sample import construct, make_plan
@@ -118,10 +119,17 @@ class ReleaseTests(unittest.TestCase):
             root=Path(tmp);config=copy.deepcopy(self.config)
             config.update(groups=4,workers=1,size_bands=[{'min':13,'max':16,'groups':4}])
             path=root/'config.json';path.write_text(json.dumps(config))
-            build(path,root/'resumed',limit=2)
-            first=list(records(root/'resumed'));build(path,root/'resumed',resume=True)
-            self.assertEqual(first,list(records(root/'resumed'))[:2])
-            build(path,root/'repeat')
+            history=root/'fixture_history';(history/'gold').mkdir(parents=True)
+            (history/'gold/groups.jsonl').write_text('')
+            (history/'manifest.json').write_text('{}\n')
+            key=Path(__file__).resolve().parent/'fixtures/public_test_identity.json'
+            # Exercise resume with disposable inputs, never the excluded release key/history.
+            def fixture_initialize(output,cfg,*unused):return initialize(output,cfg,key,history)
+            with patch('topodelta_qa.release.build.initialize',side_effect=fixture_initialize):
+                build(path,root/'resumed',limit=2)
+                first=list(records(root/'resumed'));build(path,root/'resumed',resume=True)
+                self.assertEqual(first,list(records(root/'resumed'))[:2])
+                build(path,root/'repeat')
             left={p.relative_to(root/'resumed'):sha(p) for p in (root/'resumed').rglob('*') if p.is_file()}
             right={p.relative_to(root/'repeat'):sha(p) for p in (root/'repeat').rglob('*') if p.is_file()}
             self.assertEqual(left,right)

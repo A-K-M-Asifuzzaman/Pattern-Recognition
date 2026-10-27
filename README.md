@@ -1,3 +1,140 @@
+# TopoDelta-QA · directed graph edits and question answering
+
+**Synthetic dataset; 200-group agent visual audit; no human validation or model
+benchmarking performed.** The audit also inspected 16 additional high-risk groups
+(216 distinct groups / 864 images total). This is a local research release
+candidate, without a claim of established novelty or publication readiness.
+
+Start with the [16-group gallery](instructor_demo/gallery.html), the
+[five-minute instructor script](instructor_demo/INSTRUCTOR_SUMMARY.md), and the
+[small annotation example](instructor_demo/annotation_example.json). Clone or
+download this repository and open `instructor_demo/gallery.html` locally. GitHub's
+file view shows HTML source; no hosted gallery or dataset download is claimed.
+The gallery contains all four images, both questions, saved answers, signed edge
+changes and supporting evidence for every selected group. Answers are algorithmic
+annotations, never model predictions.
+
+## Three comparison cases
+
+The central question is whether a visual change matters to a particular question.
+Each base group has two questions and four images: an original, a redraw, and two
+single-operation edits independently applied to the original.
+
+| Original compared with | Graph change | Answer effect | Comparisons |
+| --- | --- | --- | ---: |
+| Redraw | Complete labeled graph preserved; appearance changes | Unchanged | 40,000 |
+| Irrelevant edit | Add, delete or reverse an edge | Unchanged for this question | 58,914 |
+| Relevant edit | Add, delete or reverse an edge | Changes for this question | 21,086 |
+
+These 120,000 comparisons are correlated within groups; they are not independent
+graph samples. Question types are direct-edge presence, directed reachability and
+shortest-path length. Reversal counts as **one operation with two directed-edge
+differences**. The changed-edge delta is separate from answer-supporting evidence.
+
+### Same edit, two questions
+
+In [the first gallery group](instructor_demo/gallery.html#g-cb2cb52cb5e1d654b236734a),
+delete **VA → JM**. The direct-edge answer changes **true → false**. Reachability
+stays **true** because **VA → VQ → JM** survives. The same edit is relevant to one
+question and irrelevant to the other. Its complete saved record and certificates
+are [included](instructor_demo/samples/cb2cb52cb5e1d654b236734a.json).
+
+| Original | Delete VA → JM |
+| --- | --- |
+| ![Original teaching graph](instructor_demo/images/5aa517603f6dedd7f43620b6.png) | ![Same graph after deleting VA to JM](instructor_demo/images/c874b0b6009587ddf3725390.png) |
+
+## Verified current release · v0.3.0-rc1
+
+| Unit | Count |
+| --- | ---: |
+| Base groups | 20,000 |
+| Diagrams | 80,000 |
+| PNG / SVG assets | 80,000 / 80,000 |
+| Single-image QA instances | 160,000 |
+| Original–variant–question comparisons | 120,000 |
+| Train / validation / test groups | 14,000 / 3,000 / 3,000 |
+
+Graphs have 6–20 nodes. Size bands 6–8 / 9–12 / 13–16 / 17–20 contain
+4,000 / 4,000 / 6,000 / 6,000 groups. DAG/cyclic counts are 10,000 each;
+connected/disconnected counts are 15,226/4,774. Four styles have 5,000 groups each.
+Layouts are grid 5,058, staggered layers 5,063, radial 5,060 and concentric 4,819.
+See [all distributions and definitions](instructor_demo/README.md),
+[coverage](instructor_demo/reports/coverage_summary.json),
+[task counts](instructor_demo/reports/tasks.csv),
+[edit counts](instructor_demo/reports/operations.csv),
+[answer transitions](instructor_demo/reports/answer_transitions.csv), and
+[acceptance/rejections](instructor_demo/reports/acceptance_by_size.csv).
+
+Counts were reconciled with the actual saved manifest. Its SHA-256 is
+`10fcb8dd41f48542301f22dd09f4bbb553095333335a3db7427a098bced09e0a`;
+[the header receipt](instructor_demo/reports/release_manifest_summary.json)
+and [source-copy provenance](instructor_demo/selection.json) are included.
+
+## Code, schema and checks
+
+- [Release generator](topodelta_qa/release/build.py),
+  [independent raw-JSON verifier](topodelta_qa/release/independent.py),
+  [saved-image validation](topodelta_qa/release/verify.py), and
+  [split/isomorphism audit](topodelta_qa/release/split_audit.py).
+- [CLI](topodelta_qa/cli.py), [evaluator](topodelta_qa/evaluate.py) and [tests](tests/).
+  The evaluator supports the historical 6–12-node pilot protocol; it is **not**
+  an evaluator for the current 20-node release. No release baseline was run.
+- [Canonical group schema](instructor_demo/reports/group.schema.json),
+  [readable JSON projection](instructor_demo/annotation_example.json), and 16
+  complete saved records in `instructor_demo/samples/`.
+- [Runtime pins](requirements.txt), [test dependency](requirements-dev.txt),
+  [recorded environment](instructor_demo/reports/environment.json), and
+  [generation configuration](configs/release_candidate.json).
+
+```sh
+# Existing CPython 3.12.6 environment; no inference or model download.
+PYTHONPATH=. python3 scripts/instructor_demo.py build
+PYTHONPATH=. python3 scripts/instructor_demo.py verify
+python3 -m unittest discover -s tests -p 'test_instructor_demo.py' -v
+python3 -m topodelta_qa --help
+```
+
+[Reproduction instructions](docs/REPRODUCTION.md) separate the self-contained
+sample demo from exact full-release regeneration, which requires local historical
+inputs and an evaluator identity key excluded from Git. The independent demo check
+recomputes 128 answers, 128 certificates and 32 edits. Full-release validation,
+split/export checks and a complete second regeneration are documented in the
+[actual release report](docs/RELEASE_CANDIDATE_REPORT.md),
+[closeout](docs/RELEASE_CANDIDATE_CLOSEOUT.md), and
+[completed/running/pending status table](instructor_demo/STATUS.md).
+
+## Availability and limitations
+
+This repository includes source, documentation, schemas, curated saved reports
+and **16 training groups / 64 sample PNGs**. The full sealed 20,000-group dataset,
+complete regeneration, archives and existing review materials remain locally in
+`outputs/` (release: `outputs/topodelta_qa_v0.3.0-rc1`). They are not uploaded or
+ordinary Git history. There is no public full-dataset download link at present.
+Credentials, evaluator identity keys, caches and temporary files are excluded.
+
+Deterministic correctness checks establish the implemented graph/rendering
+properties; agent visual inspection is a sampled judgment of apparent readability.
+It does not establish human readability or inter-rater agreement. HTML browser
+inspection remains **pending** because preview tools were unavailable; static
+links and saved PNGs were checked. SVGs were not independently browser-rasterized.
+
+The known redraw/style shortcut makes redraw comparisons easier to identify;
+report redraw invariance separately from edit sensitivity. Planar templates,
+sampling bias (especially six-node rejection sampling), and 134 empty coverage
+cells limit generality. Small marginal shortcut associations do not prove absence
+of leakage. No learned verifier, model training or paid API experiment was run.
+License selection and font redistribution provenance remain author decisions;
+this repository does not grant a dataset or code license. No standalone font is
+included in this small sample bundle.
+
+[Repository preparation and check evidence](docs/REPOSITORY_PREPARATION.md)
+records what was included and preserved. Historical Phase 2A/2B scaffolding remains
+for provenance; **Phase 2B live inference is cancelled**. Historical records below
+use their original version counts and local-only links; current status is above.
+
+<details>
+<summary>Historical Phase 1 README — original text preserved</summary>
+
 # TopoDelta-QA · Phase 1
 
 **Current mode: dataset creation only. Phase 2B inference is cancelled.**
@@ -159,3 +296,5 @@ No real provider inference has run. The example budget is a proposal, not approv
 null reservation settings and an authorization gate deliberately prevent dispatch.
 The 18-group validation oracle sanity check is privileged access, not VLM performance.
 Test predictions remain absent. There is no learned topology-delta verifier.
+
+</details>

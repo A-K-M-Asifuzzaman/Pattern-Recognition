@@ -4,6 +4,8 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+
+TEST_KEY = Path(__file__).resolve().parent / "fixtures/public_test_identity.json"
 from unittest.mock import patch
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
@@ -23,7 +25,7 @@ class Phase1BTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)/'data'
             config=Config(groups=1,max_attempts=100)
-            generate(config,root)
+            generate(config,root,id_key_file=TEST_KEY)
             group=read_jsonl(root/'gold/groups.jsonl')[0]
             self.assertEqual({p.stat().st_mtime_ns for p in (root/'inference/images').iterdir()},{0})
             guesses={oid(group['id'],'variant',i) for i in range(4)}
@@ -40,7 +42,7 @@ class Phase1BTests(unittest.TestCase):
     def test_edit_counts_reject_booleans_and_floats(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)/'data'
-            generate(Config(groups=1,max_attempts=100),root)
+            generate(Config(groups=1,max_attempts=100),root,id_key_file=TEST_KEY)
             original=json.loads((root/'gold/groups.jsonl').read_text().splitlines()[0])
             for field in ('operation_count','directed_set_difference_count'):
                 for malformed in (True,1.0):
@@ -53,7 +55,7 @@ class Phase1BTests(unittest.TestCase):
     def test_historical_source_difference_is_not_data_corruption(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)/'data'
-            generate(Config(groups=1,max_attempts=100),root)
+            generate(Config(groups=1,max_attempts=100),root,id_key_file=TEST_KEY)
             with patch('topodelta_qa.verify.source_hashes',return_value={'historical.py':'different'}):
                 result=validate_dataset(root)
                 self.assertEqual(result['status'],'passed')

@@ -239,23 +239,26 @@ invariance separately from edited-case sensitivity. Low marginal shortcut
 associations do not prove absence of leakage. The legacy evaluator supports the
 older 6–12-node format; it is not a release-candidate baseline evaluator.
 
-The completed agent audit covers **{visual['distinct_groups']} groups / {visual['images_inspected']} images**, including
-**{visual['additional_high_risk_groups']} additional high-risk groups**. Deterministic graph/image checks
+This synthetic dataset has a **{visual['stratified_groups']}-group agent visual audit** plus
+**{visual['additional_high_risk_groups']} additional high-risk groups** ({visual['distinct_groups']} distinct groups /
+{visual['images_inspected']} images in total). Deterministic graph/image checks
 establish defined software properties; agent judgments concern apparent visual
 readability at inspected scales. **No human validation or model benchmarking
 occurred.** Human validation is outside scope. Existing review materials remain
 local and unchanged; no additional review materials were created for this demo.
 
-The workspace had **no Git repository or tracking index** before ignore changes.
+At the original demo handover the workspace had **no Git repository or tracking
+index** before ignore changes; that inspection is preserved in `reports/git_preparation.json`.
 The root `.gitignore` now excludes `outputs/`, credentials/identity keys, virtual
 environments and caches. Source (`topodelta_qa/`, `scripts/`, `tests/`), configs
 without keys, docs and this bounded demo are eligible for ordinary tracking.
 Only **16 saved groups / 64 PNGs** are included here, all from train, selected for
-teaching coverage rather than performance. The historical root README stays
-unchanged because its hash is preserved in earlier build evidence; use this
-README for the current demo. Full collections and temporary outputs stay local.
-The workspace was not initialized as a repository; nothing was published or
-pushed. License adoption and font
+teaching coverage rather than performance. The original root README is preserved
+in the initial Git commit and the root README's historical section; the frozen
+legacy source inventory refers to those original bytes. Full collections and
+temporary outputs stay local.
+Current repository delivery is documented in [the root README](../README.md).
+License adoption and font
 redistribution provenance need author review before any external publication;
 this demo grants no license. No novelty, superiority or publication readiness
 is claimed.
@@ -286,8 +289,8 @@ not a model experiment. All 16 groups and all 64 PNGs are saved training example
 
 ## State these limits explicitly
 
-“Deterministic correctness checks passed. An agent inspected {visual['distinct_groups']} groups,
-including {visual['additional_high_risk_groups']} high-risk groups; those readability judgments are not human
+“Deterministic correctness checks passed. A {visual['stratified_groups']}-group agent visual audit was
+followed by {visual['additional_high_risk_groups']} additional high-risk groups; those readability judgments are not human
 validation. **No human validation or model results are available or implied.**
 The known redraw/style shortcut means redraw invariance and edit sensitivity
 must be reported separately. This is a research dataset release candidate.”
@@ -309,14 +312,14 @@ when this presentation is handed over.
 | Completed | Inference/gold export checks | 160,000 single-image and 120,000 paired cases |
 | Completed | Second complete regeneration | 200,484 payload hashes and manifest bytes matched; zero normalizations |
 | Completed | Core archives | 21 archives; 200,485 safe members verified |
-| Completed | Agent visual audit | 216 groups / 864 images, including 16 high-risk groups; no unresolved defect observed at inspected scales |
+| Completed | Agent visual audit | 200 stratified groups plus 16 high-risk groups = 216 groups / 864 images; no unresolved defect observed at inspected scales |
 | Completed | Demo selection and source integrity | 16 training groups / 64 exact saved PNGs; source hashes recorded in selection.json |
 | Completed | Demo semantic checks | 128 answers, 128 certificates and 32 edits recomputed locally |
 | Completed | Demo static HTML checks | 16 groups, 64 local PNG links, questions, saved answers and edit explanations |
 | Completed | Demo saved-PNG agent inspection | All 64 on contact sheets; teaching original/deletion and largest original opened at native resolution; sampled readability judgment only |
 | Completed | Demo regression checks | Three tests: semantic presentation, isolated rebuild/corruption rejection, Git exclusion boundary |
-| Unavailable | Rendered HTML browser inspection | Chrome absent; in-app browser security policy blocks local file URLs; no workaround attempted |
-| Completed | Git scope inspection | No repository/index existed; ignore behavior checked in a throwaway repository; no local files removed |
+| Pending (tools unavailable) | Rendered HTML browser inspection | Chrome absent; in-app browser security policy blocks local file URLs; no workaround attempted |
+| Completed | Initial demo Git scope inspection | No repository/index existed at initial handover; ignore behavior checked in a throwaway repository; no local files removed |
 | Running | Dataset or model jobs | None |
 | Pending, outside presentation scope | Author licensing / font-provenance decision | Needed before any future external publication; not a demo completion gate |
 | Outside scope | Human validation | Did not occur; no reviewer wait or new review materials |
@@ -332,8 +335,11 @@ Release evidence: [validation](reports/validation.json),
 
 Presentation checks: see `reports/demo_verification.json`,
 `reports/git_preparation.json` and `reports/browser_check.json` for the final
-local results. Full generated outputs, credentials and caches are excluded from
-ordinary Git tracking. No publication or push was performed.
+local results. The current [repository check receipt](reports/repository_checks.json)
+and [test log](reports/repository_tests.txt) accompany GitHub preparation.
+Full generated outputs, credentials and caches are excluded from
+ordinary Git tracking. Those receipts describe the original demo handover;
+current repository preparation is recorded in `../docs/REPOSITORY_PREPARATION.md`.
 
 Deterministic checks validate implemented graph/rendering properties. Agent
 readability judgments are sampled and subjective. No human validation, novelty,

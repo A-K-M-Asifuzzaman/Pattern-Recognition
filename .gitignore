@@ -1,5 +1,11 @@
 # Full generated releases, repeat builds, archives and temporary work stay local.
 /outputs/
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.zst
 
 # Local credentials and evaluator identity keys are never ordinary Git inputs.
 /configs/evaluator_id_key.json

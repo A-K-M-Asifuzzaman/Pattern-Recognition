@@ -14,6 +14,8 @@ from scripts import instructor_demo as demo
 IGNORE_CASES = {
     'outputs/topodelta_qa_v0.3.0-rc1/inference/images/full.png': True,
     'outputs/instructor_demo_work/temporary.png': True,
+    'full_release.tar.gz': True,
+    'regeneration.zip': True,
     'configs/evaluator_id_key.json': True,
     'gold/id_key.json': True,
     '.env': True,

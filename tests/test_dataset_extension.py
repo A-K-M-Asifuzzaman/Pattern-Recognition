@@ -3,6 +3,8 @@ import tempfile
 import unittest
 from collections import Counter
 from pathlib import Path
+
+TEST_KEY = Path(__file__).resolve().parent / "fixtures/public_test_identity.json"
 from topodelta_qa.dataset import generate, read_jsonl, extended_split_schedule
 from topodelta_qa.schema import Config
 from topodelta_qa.verify import validate_dataset
@@ -12,11 +14,11 @@ class DatasetExtensionTests(unittest.TestCase):
     def test_preserve_parent_and_repeat_extension(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);parent=root/'parent'
-            generate(Config(groups=3,max_attempts=100),parent)
+            generate(Config(groups=3,max_attempts=100),parent,id_key_file=TEST_KEY)
             original={p.relative_to(parent):p.read_bytes() for p in parent.rglob('*') if p.is_file()}
             config=Config(groups=8,max_attempts=1000)
             for name in ('first','repeat'):
-                generate(config,root/name,seed_dataset=parent)
+                generate(config,root/name,id_key_file=TEST_KEY,seed_dataset=parent)
                 result=validate_dataset(root/name)
                 self.assertEqual(result['status'],'passed')
                 self.assertEqual(result['dataset_version'],'0.2.0')
@@ -31,8 +33,8 @@ class DatasetExtensionTests(unittest.TestCase):
             repeated={p.relative_to(root/'repeat'):p.read_bytes() for p in (root/'repeat').rglob('*') if p.is_file()}
             self.assertEqual(first,repeated)
             self.assertEqual(original,{p.relative_to(parent):p.read_bytes() for p in parent.rglob('*') if p.is_file()})
-            with self.assertRaises(ValueError):generate(config,root/'first',seed_dataset=parent)
-            with self.assertRaises(ValueError):generate(Config(groups=2),root/'too_small',seed_dataset=parent)
+            with self.assertRaises(ValueError):generate(config,root/'first',id_key_file=TEST_KEY,seed_dataset=parent)
+            with self.assertRaises(ValueError):generate(Config(groups=2),root/'too_small',id_key_file=TEST_KEY,seed_dataset=parent)
             self.assertFalse((root/'too_small').exists())
 
     def test_split_quota_impossibility_is_explicit(self):

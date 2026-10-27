@@ -23,8 +23,8 @@ not a model experiment. All 16 groups and all 64 PNGs are saved training example
 
 ## State these limits explicitly
 
-“Deterministic correctness checks passed. An agent inspected 216 groups,
-including 16 high-risk groups; those readability judgments are not human
+“Deterministic correctness checks passed. A 200-group agent visual audit was
+followed by 16 additional high-risk groups; those readability judgments are not human
 validation. **No human validation or model results are available or implied.**
 The known redraw/style shortcut means redraw invariance and edit sensitivity
 must be reported separately. This is a research dataset release candidate.”

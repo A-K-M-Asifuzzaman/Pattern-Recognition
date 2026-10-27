@@ -1,0 +1,273 @@
+Dataset-focused offline checks after test portability fixes. No inference-harness test suites or provider calls.
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_release*.py' -v
+Creating slot 0/2; free 61.1 GiB; rejections this run 0
+{
+  "status": "checkpoint_complete",
+  "groups": 2,
+  "from_group": 0,
+  "elapsed_seconds": 0.381,
+  "new_rejections": {},
+  "exact_iso_candidate_checks": 0,
+  "candidate_construction_seconds": 0.096,
+  "workers": 1
+}
+{
+  "status": "generation_complete",
+  "groups": 4,
+  "from_group": 2,
+  "elapsed_seconds": 0.33,
+  "new_rejections": {},
+  "exact_iso_candidate_checks": 0,
+  "candidate_construction_seconds": 0.072,
+  "workers": 1
+}
+Creating slot 0/4; free 61.1 GiB; rejections this run 0
+{
+  "status": "generation_complete",
+  "groups": 4,
+  "from_group": 0,
+  "elapsed_seconds": 0.555,
+  "new_rejections": {},
+  "exact_iso_candidate_checks": 0,
+  "candidate_construction_seconds": 0.179,
+  "workers": 1
+}
+{
+  "status": "passed",
+  "checked": {
+    "answers": 32,
+    "certificates": 32,
+    "edits": 8,
+    "groups": 4
+  },
+  "pngs": 16,
+  "svgs": 16,
+  "duplicate_pngs": 0,
+  "png_metadata_free": 16,
+  "saved_png_svg_regeneration": "all passed",
+  "pixel_footprint_and_detectability_checks": 8,
+  "human_review": false,
+  "independent_semantics": "Raw JSON Floyd\u2013Warshall and structural certificate validation; no primary/NetworkX imports",
+  "split_isomorphism": "Independent refinement plus exact adjacency backtracking across all variants and historical blacklist"
+}
+Archived metadata_and_exports.tar.gz: 1 files
+Archived groups_00.tar.gz: 4 files
+test_constructive_semantics_geometry_and_mutations (test_release_candidate.ReleaseTests.test_constructive_semantics_geometry_and_mutations) ... ok
+test_exact_iso_ignores_labels (test_release_candidate.ReleaseTests.test_exact_iso_ignores_labels) ... /Users/asifzaman/.pyenv/versions/3.12.6/lib/python3.12/site-packages/networkx/utils/backends.py:551: UserWarning: The hashes produced for directed graphs changed in version v3.5 due to a bugfix to track in and out edges separately (see documentation).
+  return self.orig_func(*args, **kwargs)
+/Users/asifzaman/.pyenv/versions/3.12.6/lib/python3.12/site-packages/networkx/algorithms/graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+ok
+test_exact_size_split_appearance_plan_and_checkpoint_coverage (test_release_candidate.ReleaseTests.test_exact_size_split_appearance_plan_and_checkpoint_coverage) ... ok
+test_extended_small_concentric_templates_expand_corridor_capacity (test_release_candidate.ReleaseTests.test_extended_small_concentric_templates_expand_corridor_capacity) ... ok
+test_hand_certificates_accept_alternatives_and_reject_incomplete_absence (test_release_candidate.ReleaseTests.test_hand_certificates_accept_alternatives_and_reject_incomplete_absence) ... ok
+test_isolated_pocket_preserves_a_richer_five_node_core (test_release_candidate.ReleaseTests.test_isolated_pocket_preserves_a_richer_five_node_core) ... ok
+test_known_cyclic_moderate_cell_has_a_verified_addition (test_release_candidate.ReleaseTests.test_known_cyclic_moderate_cell_has_a_verified_addition) ... ok
+test_resume_matches_full_repeat_and_refuses_overwrite (test_release_candidate.ReleaseTests.test_resume_matches_full_repeat_and_refuses_overwrite) ... ok
+test_staged_small_cell_revision_preserves_the_prior_plan_prefix (test_release_candidate.ReleaseTests.test_staged_small_cell_revision_preserves_the_prior_plan_prefix) ... ok
+test_archive_integrity_and_complete_manifest_comparison (test_release_packaging.PackagingTests.test_archive_integrity_and_complete_manifest_comparison) ... ok
+test_descriptive_shortcut_statistics (test_release_packaging.PackagingTests.test_descriptive_shortcut_statistics) ... ok
+test_independent_refinement_is_label_invariant_and_exact (test_release_packaging.PackagingTests.test_independent_refinement_is_label_invariant_and_exact) ... ok
+test_review_stratifies_exact_sizes_and_keeps_required_groups (test_release_packaging.PackagingTests.test_review_stratifies_exact_sizes_and_keeps_required_groups) ... ok
+test_schemas_exports_alignment_and_corruption_detection (test_release_packaging.PackagingTests.test_schemas_exports_alignment_and_corruption_detection) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 5.282s
+
+OK
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_pilot.py' -v
+test_generated_dataset_and_split_isolation (test_pilot.DatasetAndMetricTests.test_generated_dataset_and_split_isolation) ... ok
+test_paired_oracle_joint_and_wrong_second_answer (test_pilot.DatasetAndMetricTests.test_paired_oracle_joint_and_wrong_second_answer) ... ok
+test_prediction_input_errors (test_pilot.DatasetAndMetricTests.test_prediction_input_errors) ... ok
+test_rejects_corrupted_saved_metadata (test_pilot.DatasetAndMetricTests.test_rejects_corrupted_saved_metadata) ... ok
+test_repeat_generation_byte_reproducibility (test_pilot.DatasetAndMetricTests.test_repeat_generation_byte_reproducibility) ... ok
+test_single_oracle_and_deliberately_wrong_missing (test_pilot.DatasetAndMetricTests.test_single_oracle_and_deliberately_wrong_missing) ... ok
+test_visible_generation_exhaustion (test_pilot.DatasetAndMetricTests.test_visible_generation_exhaustion) ... ok
+test_wrong_delta_and_certificate_penalize_joint_independently (test_pilot.DatasetAndMetricTests.test_wrong_delta_and_certificate_penalize_joint_independently) ... ok
+test_empty_sets_and_signed_reversal (test_pilot.DeltaMetricTests.test_empty_sets_and_signed_reversal) ... ok
+test_crossings_and_unreadable_labels_rejected (test_pilot.RenderingTests.test_crossings_and_unreadable_labels_rejected) ... ok
+test_geometry_tamper_and_unchanged_edges (test_pilot.RenderingTests.test_geometry_tamper_and_unchanged_edges) ... ok
+test_all_edit_operations_and_reversal_delta (test_pilot.SemanticTests.test_all_edit_operations_and_reversal_delta) ... ok
+test_exact_isomorphism_ignores_labels_but_not_structure (test_pilot.SemanticTests.test_exact_isomorphism_ignores_labels_but_not_structure) ... ok
+test_invalid_certificates_and_explicit_absence (test_pilot.SemanticTests.test_invalid_certificates_and_explicit_absence) ... ok
+test_multiple_valid_paths_and_certificates (test_pilot.SemanticTests.test_multiple_valid_paths_and_certificates) ... ok
+test_one_edit_different_question_relevance (test_pilot.SemanticTests.test_one_edit_different_question_relevance) ... ok
+test_primary_and_reference_positive_negative_unreachable (test_pilot.SemanticTests.test_primary_and_reference_positive_negative_unreachable) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 4.802s
+
+OK
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_phase1b.py' -v
+test_edit_counts_reject_booleans_and_floats (test_phase1b.Phase1BTests.test_edit_counts_reject_booleans_and_floats) ... ok
+test_hand_authored_adversarial_evaluator_fixtures (test_phase1b.Phase1BTests.test_hand_authored_adversarial_evaluator_fixtures) ... ok
+test_historical_source_difference_is_not_data_corruption (test_phase1b.Phase1BTests.test_historical_source_difference_is_not_data_corruption) ... ok
+test_public_parent_index_enumeration_cannot_recover_variant_roles (test_phase1b.Phase1BTests.test_public_parent_index_enumeration_cannot_recover_variant_roles) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.989s
+
+OK
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_dataset_extension.py' -v
+Validated seed dataset; retaining 3 groups and all split assignments
+Validated seed dataset; retaining 3 groups and all split assignments
+test_cancelled_inference_entrypoints_fail_before_access (test_dataset_extension.DatasetExtensionTests.test_cancelled_inference_entrypoints_fail_before_access) ... ok
+test_preserve_parent_and_repeat_extension (test_dataset_extension.DatasetExtensionTests.test_preserve_parent_and_repeat_extension) ... ok
+test_split_quota_impossibility_is_explicit (test_dataset_extension.DatasetExtensionTests.test_split_quota_impossibility_is_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 9.134s
+
+OK
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_instructor_demo.py' -v
+test_ignore_boundary (test_instructor_demo.InstructorDemoTests.test_ignore_boundary) ... ok
+test_rebuild_uses_only_bundled_inputs_and_is_byte_identical (test_instructor_demo.InstructorDemoTests.test_rebuild_uses_only_bundled_inputs_and_is_byte_identical) ... ok
+test_saved_examples_and_teaching_claim (test_instructor_demo.InstructorDemoTests.test_saved_examples_and_teaching_claim) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.298s
+
+OK
+
+
+CLEAN EXPORT CHECKS (only repository files; no private key/full outputs):
+Clean staged-file export: private identity key, historical outputs and caches absent. Public dummy test fixture only. No installation.
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_release*.py' -v
+Creating slot 0/2; free 61.1 GiB; rejections this run 0
+{
+  "status": "checkpoint_complete",
+  "groups": 2,
+  "from_group": 0,
+  "elapsed_seconds": 0.374,
+  "new_rejections": {},
+  "exact_iso_candidate_checks": 0,
+  "candidate_construction_seconds": 0.095,
+  "workers": 1
+}
+{
+  "status": "generation_complete",
+  "groups": 4,
+  "from_group": 2,
+  "elapsed_seconds": 0.35,
+  "new_rejections": {},
+  "exact_iso_candidate_checks": 0,
+  "candidate_construction_seconds": 0.094,
+  "workers": 1
+}
+Creating slot 0/4; free 61.1 GiB; rejections this run 0
+{
+  "status": "generation_complete",
+  "groups": 4,
+  "from_group": 0,
+  "elapsed_seconds": 0.538,
+  "new_rejections": {},
+  "exact_iso_candidate_checks": 0,
+  "candidate_construction_seconds": 0.159,
+  "workers": 1
+}
+{
+  "status": "passed",
+  "checked": {
+    "answers": 32,
+    "certificates": 32,
+    "edits": 8,
+    "groups": 4
+  },
+  "pngs": 16,
+  "svgs": 16,
+  "duplicate_pngs": 0,
+  "png_metadata_free": 16,
+  "saved_png_svg_regeneration": "all passed",
+  "pixel_footprint_and_detectability_checks": 8,
+  "human_review": false,
+  "independent_semantics": "Raw JSON Floyd\u2013Warshall and structural certificate validation; no primary/NetworkX imports",
+  "split_isomorphism": "Independent refinement plus exact adjacency backtracking across all variants and historical blacklist"
+}
+Archived metadata_and_exports.tar.gz: 1 files
+Archived groups_00.tar.gz: 4 files
+test_constructive_semantics_geometry_and_mutations (test_release_candidate.ReleaseTests.test_constructive_semantics_geometry_and_mutations) ... ok
+test_exact_iso_ignores_labels (test_release_candidate.ReleaseTests.test_exact_iso_ignores_labels) ... /Users/asifzaman/.pyenv/versions/3.12.6/lib/python3.12/site-packages/networkx/utils/backends.py:551: UserWarning: The hashes produced for directed graphs changed in version v3.5 due to a bugfix to track in and out edges separately (see documentation).
+  return self.orig_func(*args, **kwargs)
+/Users/asifzaman/.pyenv/versions/3.12.6/lib/python3.12/site-packages/networkx/algorithms/graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+ok
+test_exact_size_split_appearance_plan_and_checkpoint_coverage (test_release_candidate.ReleaseTests.test_exact_size_split_appearance_plan_and_checkpoint_coverage) ... ok
+test_extended_small_concentric_templates_expand_corridor_capacity (test_release_candidate.ReleaseTests.test_extended_small_concentric_templates_expand_corridor_capacity) ... ok
+test_hand_certificates_accept_alternatives_and_reject_incomplete_absence (test_release_candidate.ReleaseTests.test_hand_certificates_accept_alternatives_and_reject_incomplete_absence) ... ok
+test_isolated_pocket_preserves_a_richer_five_node_core (test_release_candidate.ReleaseTests.test_isolated_pocket_preserves_a_richer_five_node_core) ... ok
+test_known_cyclic_moderate_cell_has_a_verified_addition (test_release_candidate.ReleaseTests.test_known_cyclic_moderate_cell_has_a_verified_addition) ... ok
+test_resume_matches_full_repeat_and_refuses_overwrite (test_release_candidate.ReleaseTests.test_resume_matches_full_repeat_and_refuses_overwrite) ... ok
+test_staged_small_cell_revision_preserves_the_prior_plan_prefix (test_release_candidate.ReleaseTests.test_staged_small_cell_revision_preserves_the_prior_plan_prefix) ... ok
+test_archive_integrity_and_complete_manifest_comparison (test_release_packaging.PackagingTests.test_archive_integrity_and_complete_manifest_comparison) ... ok
+test_descriptive_shortcut_statistics (test_release_packaging.PackagingTests.test_descriptive_shortcut_statistics) ... ok
+test_independent_refinement_is_label_invariant_and_exact (test_release_packaging.PackagingTests.test_independent_refinement_is_label_invariant_and_exact) ... ok
+test_review_stratifies_exact_sizes_and_keeps_required_groups (test_release_packaging.PackagingTests.test_review_stratifies_exact_sizes_and_keeps_required_groups) ... ok
+test_schemas_exports_alignment_and_corruption_detection (test_release_packaging.PackagingTests.test_schemas_exports_alignment_and_corruption_detection) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 5.270s
+
+OK
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_pilot.py' -v
+test_generated_dataset_and_split_isolation (test_pilot.DatasetAndMetricTests.test_generated_dataset_and_split_isolation) ... ok
+test_paired_oracle_joint_and_wrong_second_answer (test_pilot.DatasetAndMetricTests.test_paired_oracle_joint_and_wrong_second_answer) ... ok
+test_prediction_input_errors (test_pilot.DatasetAndMetricTests.test_prediction_input_errors) ... ok
+test_rejects_corrupted_saved_metadata (test_pilot.DatasetAndMetricTests.test_rejects_corrupted_saved_metadata) ... ok
+test_repeat_generation_byte_reproducibility (test_pilot.DatasetAndMetricTests.test_repeat_generation_byte_reproducibility) ... ok
+test_single_oracle_and_deliberately_wrong_missing (test_pilot.DatasetAndMetricTests.test_single_oracle_and_deliberately_wrong_missing) ... ok
+test_visible_generation_exhaustion (test_pilot.DatasetAndMetricTests.test_visible_generation_exhaustion) ... ok
+test_wrong_delta_and_certificate_penalize_joint_independently (test_pilot.DatasetAndMetricTests.test_wrong_delta_and_certificate_penalize_joint_independently) ... ok
+test_empty_sets_and_signed_reversal (test_pilot.DeltaMetricTests.test_empty_sets_and_signed_reversal) ... ok
+test_crossings_and_unreadable_labels_rejected (test_pilot.RenderingTests.test_crossings_and_unreadable_labels_rejected) ... ok
+test_geometry_tamper_and_unchanged_edges (test_pilot.RenderingTests.test_geometry_tamper_and_unchanged_edges) ... ok
+test_all_edit_operations_and_reversal_delta (test_pilot.SemanticTests.test_all_edit_operations_and_reversal_delta) ... ok
+test_exact_isomorphism_ignores_labels_but_not_structure (test_pilot.SemanticTests.test_exact_isomorphism_ignores_labels_but_not_structure) ... ok
+test_invalid_certificates_and_explicit_absence (test_pilot.SemanticTests.test_invalid_certificates_and_explicit_absence) ... ok
+test_multiple_valid_paths_and_certificates (test_pilot.SemanticTests.test_multiple_valid_paths_and_certificates) ... ok
+test_one_edit_different_question_relevance (test_pilot.SemanticTests.test_one_edit_different_question_relevance) ... ok
+test_primary_and_reference_positive_negative_unreachable (test_pilot.SemanticTests.test_primary_and_reference_positive_negative_unreachable) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 4.789s
+
+OK
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_phase1b.py' -v
+test_edit_counts_reject_booleans_and_floats (test_phase1b.Phase1BTests.test_edit_counts_reject_booleans_and_floats) ... ok
+test_hand_authored_adversarial_evaluator_fixtures (test_phase1b.Phase1BTests.test_hand_authored_adversarial_evaluator_fixtures) ... ok
+test_historical_source_difference_is_not_data_corruption (test_phase1b.Phase1BTests.test_historical_source_difference_is_not_data_corruption) ... ok
+test_public_parent_index_enumeration_cannot_recover_variant_roles (test_phase1b.Phase1BTests.test_public_parent_index_enumeration_cannot_recover_variant_roles) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.992s
+
+OK
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_dataset_extension.py' -v
+Validated seed dataset; retaining 3 groups and all split assignments
+Validated seed dataset; retaining 3 groups and all split assignments
+test_cancelled_inference_entrypoints_fail_before_access (test_dataset_extension.DatasetExtensionTests.test_cancelled_inference_entrypoints_fail_before_access) ... ok
+test_preserve_parent_and_repeat_extension (test_dataset_extension.DatasetExtensionTests.test_preserve_parent_and_repeat_extension) ... ok
+test_split_quota_impossibility_is_explicit (test_dataset_extension.DatasetExtensionTests.test_split_quota_impossibility_is_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 9.110s
+
+OK
+
+COMMAND: python3 -m unittest discover -s tests -p 'test_instructor_demo.py' -v
+test_ignore_boundary (test_instructor_demo.InstructorDemoTests.test_ignore_boundary) ... ok
+test_rebuild_uses_only_bundled_inputs_and_is_byte_identical (test_instructor_demo.InstructorDemoTests.test_rebuild_uses_only_bundled_inputs_and_is_byte_identical) ... ok
+test_saved_examples_and_teaching_claim (test_instructor_demo.InstructorDemoTests.test_saved_examples_and_teaching_claim) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.127s
+
+OK
