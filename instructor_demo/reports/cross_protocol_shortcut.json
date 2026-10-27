@@ -1,0 +1,14 @@
+{
+  "cramers_v": 0.32647747348310907,
+  "data_changes_or_exclusions": [],
+  "finding": "A style difference identifies redraw comparisons; all redraw questions preserve answers. This is an explicit cross-perturbation shortcut. Report redraw invariance separately from matched edited-variant results. The main release shortcut tables cover edited variants only.",
+  "groups": 20000,
+  "method": "Descriptive counts from raw records; no training or inference.",
+  "scope": "All 120000 paired comparisons, including redraws",
+  "style_difference_answer_change_counts": {
+    "style_changed=False,answer_changed=False": 58914,
+    "style_changed=False,answer_changed=True": 21086,
+    "style_changed=True,answer_changed=False": 40000
+  },
+  "unchanged_label_fraction": 0.8242833333333334
+}

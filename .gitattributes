@@ -1,0 +1,8 @@
+*.py text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.png binary
+# Preserve report bytes for the saved release hashes, including CSV CRLF.
+*.csv -text whitespace=cr-at-eol
+instructor_demo/reports/*.json -text
+instructor_demo/samples/*.json -text

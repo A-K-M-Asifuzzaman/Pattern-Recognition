@@ -1,0 +1,240 @@
+{
+  "rendered_browser_inspection": "unavailable",
+  "attempts": [
+    {
+      "tool": "Playwright",
+      "result": "Chrome executable not installed; no browser downloaded."
+    },
+    {
+      "tool": "In-app browser",
+      "result": "Security policy rejects local file URLs; no workaround attempted."
+    }
+  ],
+  "static_html": "passed: 16 groups, 64 image tags, all local gallery links exist; no scripts, iframes or remote dependencies.",
+  "agent_png_inspection": {
+    "type": "agent visual inspection of saved PNGs, not browser rendering or human validation",
+    "groups": 16,
+    "distinct_pngs": 64,
+    "method": "Four contact sheets in Original / Edit A / Redraw / Edit B order; three saved PNGs also opened at native 1152×1152 resolution.",
+    "native_pngs": [
+      "images/5aa517603f6dedd7f43620b6.png",
+      "images/c874b0b6009587ddf3725390.png",
+      "images/df141764b4ffad336214e5cc.png"
+    ],
+    "observations": "No obvious label clipping, node/edge overlap or unreadable arrowheads observed at these scales. Teaching deletion removes VA→JM while VA→VQ→JM is visible. Unchanged geometry appears stable in the edited panels. Dense diagrams should be opened at full resolution for projection.",
+    "limitations": "Sampled agent judgments do not establish human readability, actual HTML layout, browser compatibility or accessibility."
+  },
+  "group_records": [
+    {
+      "group_id": "cb2cb52cb5e1d654b236734a",
+      "nodes": 6,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_0.png",
+      "sheet_row": 1,
+      "saved_pngs_inspected": [
+        "images/5aa517603f6dedd7f43620b6.png",
+        "images/c03bc3380cd0f2640b866672.png",
+        "images/c874b0b6009587ddf3725390.png",
+        "images/4ef5534efefd330bc23d8219.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "15f943c5b33ae26a37715d10",
+      "nodes": 6,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_0.png",
+      "sheet_row": 2,
+      "saved_pngs_inspected": [
+        "images/f4d6e73a4987d10ac471a705.png",
+        "images/555ea19f2d81ed2b1d1e36dc.png",
+        "images/ba9a5cb434704d2e323d2b54.png",
+        "images/b8bc73724c710d10ec2ecb2a.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "7bebfe0fe3e7f9ab661cd6c5",
+      "nodes": 9,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_0.png",
+      "sheet_row": 3,
+      "saved_pngs_inspected": [
+        "images/0da94431f974cae96059eb63.png",
+        "images/3e5ea8d4acbb038fd3277cce.png",
+        "images/6d5b509bc8792edd91b2c339.png",
+        "images/9929ccf21d76bb9ce8eeb09a.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "8f010ba760c25a84886ae8d0",
+      "nodes": 13,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_0.png",
+      "sheet_row": 4,
+      "saved_pngs_inspected": [
+        "images/b34bf7e28515d235fe64d13d.png",
+        "images/4a5f9e70e82e9f8f2a0239a8.png",
+        "images/b59ac95e8b95260019a3eee9.png",
+        "images/d79ffbf8225da180f858b352.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "a885e37202fe85914c050e15",
+      "nodes": 17,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_1.png",
+      "sheet_row": 1,
+      "saved_pngs_inspected": [
+        "images/7493bf35a4284620905813bf.png",
+        "images/d1fae7d31d2f5856e2f4f51b.png",
+        "images/8411773935df2036c75a52d0.png",
+        "images/33bed867fef5a796f4a003b0.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "c2e33b909ac225b0c1b9b2be",
+      "nodes": 7,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_1.png",
+      "sheet_row": 2,
+      "saved_pngs_inspected": [
+        "images/19daaa93d162db05cc9145d9.png",
+        "images/b38a6d91bd72b621db6d0c00.png",
+        "images/82bf9bfb62c41998b5742a35.png",
+        "images/ea0a849344121177558fdf0f.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "63f031b4fafb524c9d17427f",
+      "nodes": 10,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_1.png",
+      "sheet_row": 3,
+      "saved_pngs_inspected": [
+        "images/add8beb30723453698689735.png",
+        "images/02bfd240605ec0af4e29efb7.png",
+        "images/7fceecc207b213fb6e65751f.png",
+        "images/e4a778feacdddb84562aa2eb.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "feb4bb5a56f83675783b77c6",
+      "nodes": 14,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_1.png",
+      "sheet_row": 4,
+      "saved_pngs_inspected": [
+        "images/b2a92904dce6f936af7d8f3a.png",
+        "images/8f7327bc5d93a4a01886b133.png",
+        "images/6914d16885bf5c819c5ff95c.png",
+        "images/aabffa3e9e5893658b40bfd1.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "539625ef2766c54c97d2b28c",
+      "nodes": 18,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_2.png",
+      "sheet_row": 1,
+      "saved_pngs_inspected": [
+        "images/1439dda00ff61e0626f93d98.png",
+        "images/f3bea55fb6049c50796d4480.png",
+        "images/a9bfcb9f26898beec409073e.png",
+        "images/ea5d6a00e117fc3c2280c7f1.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "81f686d0fa439f72076f8dc5",
+      "nodes": 8,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_2.png",
+      "sheet_row": 2,
+      "saved_pngs_inspected": [
+        "images/d642cbde55ba8e124acc26ce.png",
+        "images/177280cca26f5414ccc13478.png",
+        "images/2795d56e6936205f2beec299.png",
+        "images/10f62afcc9512e04edc6fe19.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "5749bf1b32b40c17cdef68e2",
+      "nodes": 11,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_2.png",
+      "sheet_row": 3,
+      "saved_pngs_inspected": [
+        "images/e1a38f141cce27057d5ae86d.png",
+        "images/0874a8fa5b76a501d2c09f12.png",
+        "images/193da7f6a747824024dbff2e.png",
+        "images/9f5d4b0c8532aa5c6c3e31e0.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "ff340156f7f8ced5414a748d",
+      "nodes": 15,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_2.png",
+      "sheet_row": 4,
+      "saved_pngs_inspected": [
+        "images/92d831c9f66377e713671709.png",
+        "images/f76a42a14914217edead9225.png",
+        "images/1bcfe48d672ac0a3a075e031.png",
+        "images/5a3ccc86d4f6ce3fabbad601.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "1526080cb7ce0ede62259093",
+      "nodes": 19,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_3.png",
+      "sheet_row": 1,
+      "saved_pngs_inspected": [
+        "images/1a34c08258b55066c690fa7d.png",
+        "images/b037c189693e834fb01c854d.png",
+        "images/f59491393bb7f6ca84f0407f.png",
+        "images/337d1c7176db334edb03b48f.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "0d088ccbaca21b3a96e1c0b0",
+      "nodes": 12,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_3.png",
+      "sheet_row": 2,
+      "saved_pngs_inspected": [
+        "images/c6536398292cc9bef16b2133.png",
+        "images/f23a031ce9c611faa7932f5f.png",
+        "images/cdbfc0e63f1cf1565a7d56ef.png",
+        "images/22dcc9a0ca06353dfffee10d.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "f9216f439b9010d7292d1908",
+      "nodes": 16,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_3.png",
+      "sheet_row": 3,
+      "saved_pngs_inspected": [
+        "images/81e80d5fe84d0400e2e34179.png",
+        "images/77bc18bd2419b42b992ee213.png",
+        "images/fcda27d9944acd28f1404aea.png",
+        "images/33407f88d20a5a7d7fca9380.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    },
+    {
+      "group_id": "8c7872c986b81a0af0c265e4",
+      "nodes": 20,
+      "contact_sheet": "outputs/instructor_demo_work/qa_sheet_3.png",
+      "sheet_row": 4,
+      "saved_pngs_inspected": [
+        "images/df141764b4ffad336214e5cc.png",
+        "images/0d250e785a49d75f7594e3fe.png",
+        "images/54e24045b32a2171bd1ed757.png",
+        "images/7cd17aca8260469d33fac001.png"
+      ],
+      "finding": "All four saved PNGs inspected on contact sheet; labels, arrowheads and local edits appear distinguishable at inspected scale; no obvious clipping observed."
+    }
+  ],
+  "human_validation": false,
+  "model_results": false,
+  "manual_open": "Open instructor_demo/gallery.html in a regular local browser. The gallery requires no server or network."
+}

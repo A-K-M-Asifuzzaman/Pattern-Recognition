@@ -1,0 +1,10 @@
+split,operation,count
+test,addition,2015
+test,deletion,1963
+test,reversal,2022
+train,addition,9329
+train,deletion,9350
+train,reversal,9321
+validation,addition,1989
+validation,deletion,2021
+validation,reversal,1990

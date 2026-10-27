@@ -1,0 +1,33 @@
+{
+  "agent_visual_judgments": {
+    "additional_high_risk_groups": 16,
+    "groups": 216,
+    "human_validation": false,
+    "images": 864,
+    "limitation": "Agent judgments at inspected scales do not establish human readability; geometric/pixel checks establish deterministic properties only.",
+    "observed_unresolved_visual_defects": 0
+  },
+  "core_archive_inventory_sha256": "621df6bd1e7aab62c9855d6ba398a87526c619d5b7ce26ce9991e86d11ff8039",
+  "dataset_expanded": false,
+  "dataset_groups": 20000,
+  "deterministic_checks": {
+    "all_variant_split_audits": "passed",
+    "both_complete_build_validations": "passed",
+    "current_archive_file_sha256_check": "passed; 21 core and 2 existing companion archives",
+    "exports": "passed",
+    "full_regeneration_payload_comparison": "passed; 200484 payload hashes and manifest bytes equal; zero normalizations",
+    "prior_streamed_archive_member_check": "passed; 200485 members"
+  },
+  "existing_human_archive_sha256": "05510ac16449253720b5a27ceaba19cd64fea0aac027ab416747e04577d85f0c",
+  "human_validation_occurred": false,
+  "human_validation_scope": "outside scope; no reviewer wait or additional materials",
+  "model_benchmarking_performed": false,
+  "original_delivery_inventory_sha256": "951e721264963a8fa4482af7d65ac1edeab06c96b2a6b3231d62e01ff91c2b32",
+  "original_sealed_report_sha256": "71965bcda97f27198c12d9194f974a5e4da55131e5056b8decc956fa0de9e975",
+  "paid_api_requests": 0,
+  "preserved_human_material_files_checked": 2407,
+  "sealed_manifest_sha256": "10fcb8dd41f48542301f22dd09f4bbb553095333335a3db7427a098bced09e0a",
+  "status": "complete",
+  "verification_scope": "Closeout reconciled existing full-run reports and rehashed all archive files and existing human-material files. It did not rerun generation, rendering, semantic algorithms, model benchmarks, or human review.",
+  "version": "0.3.0-rc1"
+}

@@ -1,0 +1,119 @@
+{
+  "status": "passed",
+  "workspace_tracking_before_ignore_change": "No Git repository or index existed; commands inspected before changing .gitignore and rechecked at closeout.",
+  "tracking_commands": {
+    "git status --short": {
+      "exit_code": 128,
+      "message": "fatal: not a git repository (or any parent up to mount point /Volumes)\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set)."
+    },
+    "git ls-files": {
+      "exit_code": 128,
+      "message": "fatal: not a git repository (or any parent up to mount point /Volumes)\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set)."
+    }
+  },
+  "gitignore_before_sha256": "91cafe25203a8ef99cbb77605ebc8a3e1223f58b9e066c09c58919f774561b9f",
+  "gitignore_after_sha256": "7965cf4742d9f15faf08ee7d0ce513adbdf587f289dabaaa91f643d9b1a68afe",
+  "ignore_test": "git init in a disposable temporary directory only; git check-ignore --no-index --stdin",
+  "cases": [
+    {
+      "path": "outputs/topodelta_qa_v0.3.0-rc1/inference/images/full.png",
+      "ignored": true
+    },
+    {
+      "path": "outputs/instructor_demo_work/temporary.png",
+      "ignored": true
+    },
+    {
+      "path": "configs/evaluator_id_key.json",
+      "ignored": true
+    },
+    {
+      "path": "gold/id_key.json",
+      "ignored": true
+    },
+    {
+      "path": ".env",
+      "ignored": true
+    },
+    {
+      "path": ".env.local",
+      "ignored": true
+    },
+    {
+      "path": "service_credentials.json",
+      "ignored": true
+    },
+    {
+      "path": "api_keys.json",
+      "ignored": true
+    },
+    {
+      "path": "private.pem",
+      "ignored": true
+    },
+    {
+      "path": ".venv/bin/python",
+      "ignored": true
+    },
+    {
+      "path": "topodelta_qa/__pycache__/cached.pyc",
+      "ignored": true
+    },
+    {
+      "path": ".pytest_cache/results",
+      "ignored": true
+    },
+    {
+      "path": "instructor_demo/images/example.png",
+      "ignored": false
+    },
+    {
+      "path": "instructor_demo/samples/example.json",
+      "ignored": false
+    },
+    {
+      "path": "instructor_demo/reports/validation.json",
+      "ignored": false
+    },
+    {
+      "path": "instructor_demo/gallery.html",
+      "ignored": false
+    },
+    {
+      "path": "instructor_demo/README.md",
+      "ignored": false
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE_REPORT.md",
+      "ignored": false
+    },
+    {
+      "path": "scripts/instructor_demo.py",
+      "ignored": false
+    },
+    {
+      "path": "topodelta_qa/release/independent.py",
+      "ignored": false
+    },
+    {
+      "path": "tests/test_instructor_demo.py",
+      "ignored": false
+    },
+    {
+      "path": "configs/release_candidate.json",
+      "ignored": false
+    },
+    {
+      "path": ".env.example",
+      "ignored": false
+    }
+  ],
+  "excluded": "Complete outputs tree, local credential/identity-key files, virtual environments and caches.",
+  "eligible": "Source, key-free configuration, documentation, tests, curated small reports and 64 selected PNGs.",
+  "local_files_deleted": false,
+  "workspace_git_initialized": false,
+  "published_or_pushed": false,
+  "frozen_legacy_source_build_files_rechecked": 47,
+  "historical_root_readme_sha256": "b28ab74e32e9e466df590c5126a879fa340d38f5c6c80acc82c6263f69d38910",
+  "note": "Ignore rules do not erase local files. There was no tracked history to rewrite. No git add was performed."
+}

@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "topodelta-qa"
+version = "0.1.0"
+description = "Reproducible synthetic pilot for question-conditioned directed graph edits"
+requires-python = ">=3.12,<3.13"
+dependencies = ["networkx==3.6.1", "Pillow==12.3.0", "PyYAML==6.0.3"]
+
+[project.scripts]
+topodelta = "topodelta_qa.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["topodelta_qa*"]

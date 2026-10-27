@@ -1,0 +1,16 @@
+{
+  "notice": "Header projection of the actual sealed manifest; full 200484-file inventory stays local.",
+  "version": "0.3.0-rc1",
+  "counts": {
+    "diagram_renderings": 80000,
+    "groups": 20000,
+    "original_variant_question_comparisons": 120000,
+    "png_files": 80000,
+    "single_qa_instances": 160000,
+    "svg_files": 80000
+  },
+  "payload_files": 200484,
+  "manifest_sha256": "10fcb8dd41f48542301f22dd09f4bbb553095333335a3db7427a098bced09e0a",
+  "human_validation": false,
+  "model_inference": false
+}

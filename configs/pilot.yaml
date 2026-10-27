@@ -1,0 +1,9 @@
+seed: 20261027
+groups: 120
+max_attempts: 12000
+min_nodes: 6
+max_nodes: 12
+output: outputs/pilot_v0.1.1
+train_fraction: 0.7
+validation_fraction: 0.15
+bootstrap_replicates: 1000

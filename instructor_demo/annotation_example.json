@@ -1,0 +1,117 @@
+{
+  "presentation_projection": true,
+  "description": "One saved original/edit pair with two questions. Complete four-variant record is linked in the gallery. Geometry and duplicate explanation fields are omitted here.",
+  "source_record": {
+    "release_path": "gold/records/01722.json",
+    "sha256": "6a43177a6fda15de4e4bc544ca5c3ca1d782db5642ebdb303b3c0e13c9bfa6a4"
+  },
+  "group_id": "cb2cb52cb5e1d654b236734a",
+  "split": "train",
+  "original_graph": {
+    "edges": [
+      [
+        "JM",
+        "GW"
+      ],
+      [
+        "NK",
+        "GW"
+      ],
+      [
+        "VA",
+        "JM"
+      ],
+      [
+        "VA",
+        "VQ"
+      ],
+      [
+        "VQ",
+        "GW"
+      ],
+      [
+        "VQ",
+        "JM"
+      ]
+    ],
+    "nodes": [
+      "FG",
+      "GW",
+      "JM",
+      "NK",
+      "VA",
+      "VQ"
+    ]
+  },
+  "edited_variant_id": "c874b0b6009587ddf3725390",
+  "changed_edges": {
+    "added": [],
+    "deleted": [
+      [
+        "VA",
+        "JM"
+      ]
+    ]
+  },
+  "edit_operation": {
+    "added": [],
+    "deleted": [
+      [
+        "VA",
+        "JM"
+      ]
+    ],
+    "directed_set_difference_count": 1,
+    "operand": [
+      "VA",
+      "JM"
+    ],
+    "operation": "deletion",
+    "operation_count": 1
+  },
+  "questions": [
+    {
+      "id": "92ca5e99bd1497999ff04fba",
+      "task": "reachability",
+      "text": "Is there a directed path from VA to JM?",
+      "original_answer": true,
+      "edited_answer": true,
+      "edit_relevant": false,
+      "original_answer_evidence": {
+        "kind": "path",
+        "path": [
+          "VA",
+          "JM"
+        ]
+      },
+      "edited_answer_evidence": {
+        "kind": "path",
+        "path": [
+          "VA",
+          "VQ",
+          "JM"
+        ]
+      }
+    },
+    {
+      "id": "c727255abf93d9550ca6c4e6",
+      "task": "direct_edge",
+      "text": "Is there a directed edge from VA to JM?",
+      "original_answer": true,
+      "edited_answer": false,
+      "edit_relevant": true,
+      "original_answer_evidence": {
+        "kind": "edge_claim",
+        "present": true,
+        "source": "VA",
+        "target": "JM"
+      },
+      "edited_answer_evidence": {
+        "kind": "edge_claim",
+        "present": false,
+        "source": "VA",
+        "target": "JM"
+      }
+    }
+  ]
+}

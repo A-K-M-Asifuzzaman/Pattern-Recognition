@@ -1,0 +1,9 @@
+seed: 20261027
+groups: 1000
+max_attempts: 100000
+min_nodes: 6
+max_nodes: 12
+output: outputs/topodelta_qa_v0.2.0
+train_fraction: 0.7
+validation_fraction: 0.15
+bootstrap_replicates: 1000

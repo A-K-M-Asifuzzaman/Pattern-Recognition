@@ -1,0 +1,9 @@
+{
+  "mode": "dataset_only",
+  "inference_plan": "cancelled",
+  "paid_apis": false,
+  "model_inference": false,
+  "training": false,
+  "model_downloads": false,
+  "dataset_target_groups": 1000
+}

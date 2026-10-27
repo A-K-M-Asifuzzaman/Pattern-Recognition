@@ -1,0 +1,16 @@
+{
+  "provider": "openai",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "credential_env": "OPENAI_API_KEY",
+  "settings": {
+    "reasoning_effort": "none",
+    "max_completion_tokens": 4096
+  },
+  "image_detail": "high",
+  "timeout_seconds": 120,
+  "max_attempts": 3,
+  "max_spend_usd": 40.0,
+  "reserve_per_attempt_usd": null,
+  "reserve_basis": null
+}

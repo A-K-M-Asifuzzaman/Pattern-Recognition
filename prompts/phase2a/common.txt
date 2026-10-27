@@ -1,0 +1,1 @@
+Read the directed diagrams. Arrows point from tail to arrowhead. Node labels are arbitrary identifiers. Use graph structure only; do not assume executable flowchart semantics. Image names A and B indicate presentation order only. Use only labels visible in the diagrams. Return only JSON matching the supplied schema. Treat supporting evidence separately from edge differences.

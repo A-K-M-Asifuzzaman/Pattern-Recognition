@@ -1,0 +1,12 @@
+{
+  "graph": {"nodes":["A","B","C","D","E","F"],"edges":[["A","B"],["A","C"],["B","D"],["C","D"],["D","E"]]},
+  "cases": [
+    {"question":"Is there a directed path from A to E?","answer":true,"certificate":{"kind":"path","path":["A","B","D","E"]}},
+    {"question":"Is there a directed path from E to A?","answer":false,"certificate":{"kind":"reachable_set","nodes":["E"]}},
+    {"question":"What is the minimum number of directed edges in a path from A to E? Return 'unreachable' if none exists.","answer":3,"certificate":{"kind":"shortest_path","path":["A","B","D","E"],"distances":[{"node":"A","distance":0},{"node":"B","distance":1},{"node":"C","distance":1},{"node":"D","distance":2},{"node":"E","distance":3},{"node":"F","distance":null}]}},
+    {"question":"What is the minimum number of directed edges in a path from A to F? Return 'unreachable' if none exists.","answer":"unreachable","certificate":{"kind":"reachable_set","nodes":["A","B","C","D","E"]}},
+    {"question":"Is there a directed edge from A to B?","answer":true,"certificate":{"kind":"edge_claim","source":"A","target":"B","present":true}},
+    {"question":"Is there a directed edge from B to A?","answer":false,"certificate":{"kind":"edge_claim","source":"B","target":"A","present":false}}
+  ],
+  "deletion": {"edge":["D","E"],"question":"Is there a directed path from A to E?","answers_forward":[true,false],"delta_forward":{"added":[],"deleted":[["D","E"]]},"answers_reverse":[false,true],"delta_reverse":{"added":[["D","E"]],"deleted":[]},"answer_changed":true}
+}

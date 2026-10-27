@@ -1,0 +1,10 @@
+split,task,count
+test,direct_edge,2010
+test,reachability,1996
+test,shortest_path,1994
+train,direct_edge,9331
+train,reachability,9359
+train,shortest_path,9310
+validation,direct_edge,1992
+validation,reachability,1978
+validation,shortest_path,2030

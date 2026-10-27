@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "group_count": 16,
+  "png_count": 64,
+  "independent_demo_checks": {
+    "answers": 128,
+    "certificates": 128,
+    "edits": 32,
+    "groups": 16
+  },
+  "source_payload_copies_sha256_checked": 101,
+  "local_full_release_manifest_checked": true,
+  "source_manifest_sha256": "10fcb8dd41f48542301f22dd09f4bbb553095333335a3db7427a098bced09e0a",
+  "no_new_diagrams": true,
+  "no_inference_or_paid_api": true,
+  "human_validation": false,
+  "links": "all local gallery links exist",
+  "demo_sizes": {
+    "6": 2,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "10": 1,
+    "11": 1,
+    "12": 1,
+    "13": 1,
+    "14": 1,
+    "15": 1,
+    "16": 1,
+    "17": 1,
+    "18": 1,
+    "19": 1,
+    "20": 1
+  },
+  "demo_layouts": {
+    "radial": 4,
+    "grid": 4,
+    "concentric": 4,
+    "staggered_layers": 4
+  },
+  "demo_styles": {
+    "0": 4,
+    "3": 4,
+    "1": 4,
+    "2": 4
+  },
+  "demo_tasks": {
+    "reachability": 10,
+    "direct_edge": 11,
+    "shortest_path": 11
+  },
+  "demo_edit_operations": {
+    "deletion": 12,
+    "reversal": 9,
+    "addition": 11
+  },
+  "demo_topology": {
+    "dag": 11,
+    "cyclic": 5
+  },
+  "demo_connectivity": {
+    "disconnected": 6,
+    "connected": 10
+  },
+  "demo_density_bin": {
+    "sparse": 10,
+    "moderate": 6
+  }
+}
